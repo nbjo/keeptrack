@@ -25,3 +25,4 @@ export class Project {
     if (initializer.isActive) this.isActive = initializer.isActive;
   }
 }
+
