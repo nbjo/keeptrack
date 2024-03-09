@@ -11,7 +11,7 @@ export class Project {
     return this.id === undefined;
   }
 
-  constructor({ initializer }: { initializer?: any } = {}) {
+  constructor(initializer?: any) {
     if (!initializer) return;
     if (initializer.id) this.id = initializer.id;
     if (initializer.name) this.name = initializer.name;
@@ -25,4 +25,3 @@ export class Project {
     if (initializer.isActive) this.isActive = initializer.isActive;
   }
 }
-

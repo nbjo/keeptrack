@@ -9,8 +9,10 @@ interface ProjectCardProps {
   onEdit: (project: Project) => void;
 }
 
-function ProjectCard({ project, onEdit }: ProjectCardProps) {
-  const handleEditClicked = (projectBeingEdited: Project) => {
+function ProjectCard(props: ProjectCardProps) {
+  const { project, onEdit } = props;
+
+  const handleEditClick = (projectBeingEdited: Project) => {
     onEdit(projectBeingEdited);
   };
 
@@ -25,7 +27,9 @@ function ProjectCard({ project, onEdit }: ProjectCardProps) {
         <p>Budget : {project.budget.toLocaleString()}</p>
         <button
           className=" bordered"
-          onClick={() => handleEditClicked(project)}
+          onClick={() => {
+            handleEditClick(project);
+          }}
         >
           <span className="icon-edit "></span>
           Edit
